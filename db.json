@@ -1,0 +1,186 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imageUrl": "/1.jpg",
+      "name": "Classic Logo Tee",
+      "price": "20$",
+      "count": 2,
+      "size": {
+        "width": 450,
+        "height": 250
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "/2.jpg",
+      "name": "Vintage Retro Shirt",
+      "price": "15$",
+      "count": 5,
+      "size": {
+        "width": 700,
+        "height": 300
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "/3.jpg",
+      "name": "Sports Performance Tee",
+      "price": "30$",
+      "count": 1,
+      "size": {
+        "width": 600,
+        "height": 400
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "/4.jpg",
+      "name": "Graphic Print T-Shirt",
+      "price": "50$",
+      "count": 2,
+      "size": {
+        "width": 450,
+        "height": 250
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 5,
+      "imageUrl": "/5.jpg",
+      "name": "Striped Cotton Shirt",
+      "price": "20$",
+      "count": 2,
+      "size": {
+        "width": 450,
+        "height": 250
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 6,
+      "imageUrl": "/6.jpg",
+      "name": "Athletic Fit Performance",
+      "price": "15$",
+      "count": 5,
+      "size": {
+        "width": 700,
+        "height": 300
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 7,
+      "imageUrl": "/7.jpg",
+      "name": "Pocket Tee",
+      "price": "30$",
+      "count": 1,
+      "size": {
+        "width": 600,
+        "height": 400
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 8,
+      "imageUrl": "/8.jpg",
+      "name": "Tie-Dye Retro Shirt",
+      "price": "50$",
+      "count": 2,
+      "size": {
+        "width": 450,
+        "height": 250
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 9,
+      "imageUrl": "/9.jpg",
+      "name": "Long Sleeve Cotton",
+      "price": "40$",
+      "count": 5,
+      "size": {
+        "width": 700,
+        "height": 300
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "/10.jpg",
+      "name": "Hooded Jersey Shirt",
+      "price": "10$",
+      "count": 1,
+      "size": {
+        "width": 600,
+        "height": 400
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    },
+    {
+      "id": 11,
+      "imageUrl": "/11.jpg",
+      "name": "V-Neck Basic",
+      "price": "40$",
+      "count": 6,
+      "size": {
+        "width": 500,
+        "height": 250
+      },
+      "weight": "200g",
+      "comments": [
+        "CommentModel",
+        "CommentModel"
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "imageUrl": "some url here"
+    }
+  ]
+}
