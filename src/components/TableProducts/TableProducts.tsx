@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 import React, { useEffect, useState } from 'react';
 import { Table, Typography, Input, InputNumber, Popconfirm, Form, Space } from 'antd';
 import { Card } from '@/interface/interfaces';
-import { paginationConfig } from '../../helpers/helpers';
+import { paginationConfig, updateData } from '../../helpers/helpers';
 import { DELETE } from '../../store/actionTypes';
 
 const { Link } = Typography;
@@ -47,9 +47,9 @@ const EditableCell = <T extends object>({
               message: `Please input ${title}!`
             },
             {
-              pattern: /^[a-zA-Z0-9$.\s]{1,20}$/,
+              pattern: /^[a-zA-Z0-9$.\s-]{1,30}$/,
               message: "Error: Invalid string format. Only English letters, digits, '$' symbol, and dot '.' are allowed. The length should be between 1 and 20 characters."
-            },
+            }
           ]}
         >
           {getInput()}
@@ -83,7 +83,6 @@ const ListProducts = () => {
 
   const deleteData = (record: any) => {
     const newData = data.filter((_: any, index: any) => index != record.key);
-    console.log(newData)
     dispatch(updateData(newData));
   };
 
@@ -91,16 +90,10 @@ const ListProducts = () => {
     setEditingKey('');
   };
 
-  const updateData = (newData: any) => {
-    return {
-      type: 'UPDATE_DATA',
-      payload: newData,
-    };
-  };
-
   const save = async (id: number) => {
     try {
       ++id;
+      console.log(id);
       const row = await form.validateFields();
       const newData = [...data];
       const index = newData.findIndex((item) => id === item.id);
