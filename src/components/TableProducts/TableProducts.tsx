@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import React, { useEffect, useState } from 'react';
-import { Table, Typography, Input, InputNumber, Popconfirm, Form } from 'antd';
+import { Table, Typography, Input, InputNumber, Popconfirm, Form, Space } from 'antd';
 import { Card } from '@/interface/interfaces';
 import { paginationConfig } from '../../helpers/helpers';
 import { DELETE } from '../../store/actionTypes';
@@ -155,14 +155,23 @@ const ListProducts = () => {
             </Popconfirm>
           </span>
         ) : (
-          <>
+          <Space>
             <Link disabled={editingKey !== ''} onClick={() => edit(record)}>
               Edit
             </Link>
-            <Link disabled={editingKey !== ''} onClick={() => deleteData(record)}>
-              Delete
-            </Link>
-          </>
+            <Popconfirm
+              title="Are you sure you want to delete this record?"
+              onConfirm={() => {
+                deleteData(record);
+              }}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Link disabled={editingKey !== ''}>
+                Delete
+              </Link>
+            </Popconfirm>
+          </Space>
         );
       },
     },
