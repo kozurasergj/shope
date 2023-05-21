@@ -82,12 +82,10 @@ const ListProducts = () => {
   };
 
   const deleteData = (record: any) => {
-    dispatch({
-      type: DELETE,
-      payload: record.key
-    })
-    console.log(products)
-  }
+    const newData = data.filter((_: any, index: any) => index != record.key);
+    console.log(newData)
+    dispatch(updateData(newData));
+  };
 
   const cancel = () => {
     setEditingKey('');
