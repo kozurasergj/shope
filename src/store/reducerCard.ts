@@ -1,15 +1,12 @@
-import { DELETE, GET, UPDATE_DATA } from './actionTypes';
-import { Card, GetCardAction } from '@/interface/interfaces';
+import { GET, UPDATE_DATA } from './actionTypes';
+import { CardsInterface, interfaceAction } from '../interface/interfaces';
 
-interface CardInterface {
-  cards: Card[] | []
-}
 
-const initialState: CardInterface = {
+const initialState: CardsInterface = {
   cards: []
 }
 
-export const reducerCard = (state: CardInterface = initialState, action: any) => {
+export const reducerCard = (state: CardsInterface = initialState, action: interfaceAction) => {
   switch (action.type) {
     case GET:
       return {
@@ -20,13 +17,6 @@ export const reducerCard = (state: CardInterface = initialState, action: any) =>
       return {
         ...state,
         cards: action.payload
-      };
-    case DELETE:
-      state.cards.filter((_, index) => index !== action.payload)
-      console.log(state);
-      return {
-        ...state,
-        cards: state.cards.filter((_, index) => index !== action.payload),
       };
     default:
       return state;

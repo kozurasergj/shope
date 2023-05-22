@@ -4,19 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { Table, Typography, Input, InputNumber, Popconfirm, Form, Space } from 'antd';
 import { Card } from '@/interface/interfaces';
 import { paginationConfig, updateData } from '../../helpers/helpers';
-import { DELETE } from '../../store/actionTypes';
+import { EditableCellProps, rootState } from '../../interface/interfaces';
 
 const { Link } = Typography;
-
-interface EditableCellProps<T> {
-  editing: boolean;
-  dataIndex: number | string;
-  title: string;
-  inputType: 'text' | 'number';
-  record: T;
-  index: number;
-  children: React.ReactNode;
-}
 
 const EditableCell = <T extends object>({
   editing,
@@ -62,8 +52,8 @@ const EditableCell = <T extends object>({
 };
 
 const ListProducts = () => {
-  const products = useSelector((state: any) => state.reducerCard.cards);
-  const dispatch = useDispatch<Dispatch<any>>();
+  const products = useSelector((state: rootState) => state.reducerCard.cards);
+  const dispatch = useDispatch<Dispatch<Card[]>>();
 
   useEffect(() => {
     setData(products)
@@ -132,7 +122,8 @@ const ListProducts = () => {
     {
       title: 'Operation',
       dataIndex: 'operation',
-      render: (_: any, record: any) => {
+      render: (_: undefined, record: Card) => {
+        console.log(_);
         const editable = isEditing(record);
         return editable ? (
           <span>
@@ -176,7 +167,7 @@ const ListProducts = () => {
     }
     return {
       ...col,
-      onCell: (record: any) => ({
+      onCell: (record: Card) => ({
         record,
         dataIndex: col.dataIndex,
         title: col.title,
@@ -185,7 +176,7 @@ const ListProducts = () => {
     };
   });
 
-  const tableData = data?.map((item: any) => ({ ...item, key: item.id })); // Use "id" as the key
+  const tableData = data?.map((item: Card) => ({ ...item, key: item.id }));
 
   return (
     <Form form={form} component={false}>

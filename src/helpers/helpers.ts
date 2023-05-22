@@ -1,4 +1,6 @@
-export const updateData = (newData: any) => {
+import { Card, interfaceAction } from '../interface/interfaces';
+
+export const updateData = (newData:Card[]) => {
   return {
     type: 'UPDATE_DATA',
     payload: newData,
