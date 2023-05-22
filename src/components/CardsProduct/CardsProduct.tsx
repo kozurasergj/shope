@@ -26,8 +26,8 @@ const CardsProduct = () => {
               <span className='name'>{card.name}</span>
               <span className='name'>{card.price}</span>
             </div >
-            <button className='button' >Buy</button>
-            <button className='button'>Comments</button>
+            <Button className='button' >Buy</Button>
+            <Button className='button'>Comments</Button>
           </Card>
         </Col >
       ))
