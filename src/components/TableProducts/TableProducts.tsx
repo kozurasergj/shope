@@ -144,8 +144,12 @@ const ListProducts = () => {
             </Popconfirm>
           </span>
         ) : (
-          <Space>
-            <Link disabled={editingKey !== ''} onClick={() => edit(record)}>
+          <Space >
+            <Link
+              disabled={editingKey !== ''}
+              onClick={() => edit(record)}
+              style={{ marginRight: 8, fontSize: '18px', textTransform: "uppercase" }}
+            >
               Edit
             </Link>
             <Popconfirm
@@ -156,7 +160,7 @@ const ListProducts = () => {
               okText="Yes"
               cancelText="No"
             >
-              <Link disabled={editingKey !== ''}>
+              <Link disabled={editingKey !== ''} style={{ marginRight: 8, fontSize: '18px', textTransform: "uppercase" }}>
                 Delete
               </Link>
             </Popconfirm>
