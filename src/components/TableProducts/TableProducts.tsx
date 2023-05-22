@@ -73,16 +73,15 @@ const ListProducts = () => {
   const [data, setData] = useState(products || []);
   const [editingKey, setEditingKey] = useState('');
 
-  const isEditing = (record: any) => record.key === editingKey;
+  const isEditing = (record: Card) => record.key === editingKey;
 
-  const edit = (record: any) => {
-    console.log(record)
+  const edit = (record: Card) => {
     form.setFieldsValue({ ...record });
     setEditingKey(record.key);
   };
 
-  const deleteData = (record: any) => {
-    const newData = data.filter((_: any, index: any) => index != record.key);
+  const deleteData = (record: Card) => {
+    const newData = data.filter((item: Card) => item.id !== record.id);
     dispatch(updateData(newData));
   };
 
@@ -92,11 +91,9 @@ const ListProducts = () => {
 
   const save = async (id: number) => {
     try {
-      ++id;
-      console.log(id);
       const row = await form.validateFields();
       const newData = [...data];
-      const index = newData.findIndex((item) => id === item.id);
+      const index = newData.findIndex((item) => id === parseInt(item.id));
       if (index > -1) {
         const item = newData[index];
         newData.splice(index, 1, { ...item, ...row });
@@ -136,7 +133,6 @@ const ListProducts = () => {
       title: 'Operation',
       dataIndex: 'operation',
       render: (_: any, record: any) => {
-
         const editable = isEditing(record);
         return editable ? (
           <span>
@@ -185,7 +181,7 @@ const ListProducts = () => {
     };
   });
 
-  const tableData = data?.map((item: any, index: number) => ({ ...item, key: index.toString() }));
+  const tableData = data?.map((item: any) => ({ ...item, key: item.id })); // Use "id" as the key
 
   return (
     <Form form={form} component={false}>

@@ -22,9 +22,9 @@ const CardsProduct = () => {
           <Card bordered={false} style={{ overflow: "hidden", padding: '0px' }}>
             <Image src={card.imageUrl} alt={card.name} />
             <div className='description'>
+              <span className='name'>{card.count}</span>
               <span className='name'>{card.name}</span>
               <span className='name'>{card.price}</span>
-              <span className='name'>{card.count}</span>
             </div >
             <button className='button' >Buy</button>
             <button className='button'>Comments</button>
